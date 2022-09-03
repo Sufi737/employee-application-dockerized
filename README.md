@@ -1,2 +1,2 @@
-# employee-application-dockerized
-A proof of concept application to showcase how to Dockerize a Spring Boot application
+# Employee microservice
+This is a proof of concept application to demonstrate Dockerization of a Spring Boot application.

@@ -33,10 +33,6 @@ public class Employee {
 	@Column(name="employee_code")
 	private String code;
 	
-	@Column(name="password_hash")
-	@JsonIgnore
-	private String passwordHash;
-	
 	@Column(name="manager_employee_id", nullable = true)
     private Integer managerEmployeeId;
 	

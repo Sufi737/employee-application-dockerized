@@ -4,7 +4,6 @@ CREATE TABLE IF NOT EXISTS employee (
     lastname varchar (25),
     email varchar (50),
     employee_code varchar(10) UNIQUE,
-    password_hash varchar (100),
     manager_employee_id int,
     department_id int,
     role_id int,
@@ -46,6 +45,6 @@ INSERT INTO department(department_name)
 
 INSERT INTO employee(firstname, lastname, email, employee_code, password_hash, manager_employee_id, department_id, role_id)
     values
-        ('Sufyan', 'Khot', 'khotsufyan@gmail.com', 'EMP00001', '$2y$10$i4TiD5zEKH4MFrSCffUmTOpTNDW.jyIOj1Dc0dlTwfYkchhHUFR5G', NULL, 2, 2),
-        ('Zeeshan', 'Kazi', 'kazizeeshan@gmail.com', 'EMP00002', '$2y$10$i4TiD5zEKH4MFrSCffUmTOpTNDW.jyIOj1Dc0dlTwfYkchhHUFR5G', 1, 2, 1),
-        ('Aditya', 'Ladhe', 'ladheaditya@gmail.com', 'EMP00003', '$2y$10$i4TiD5zEKH4MFrSCffUmTOpTNDW.jyIOj1Dc0dlTwfYkchhHUFR5G', 1, 2, 1);
+        ('Sufyan', 'Khot', 'khotsufyan@gmail.com', 'EMP00001', NULL, 2, 2),
+        ('Zeeshan', 'Kazi', 'kazizeeshan@gmail.com', 'EMP00002', 1, 2, 1),
+        ('Aditya', 'Ladhe', 'ladheaditya@gmail.com', 'EMP00003', 1, 2, 1);

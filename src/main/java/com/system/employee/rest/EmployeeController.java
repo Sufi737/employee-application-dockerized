@@ -88,20 +88,30 @@ public class EmployeeController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Employee> createEmployee(@RequestBody EmployeeRequestEntity empRequest) {
-		
-		
-		return ResponseEntity.ok(employeeService.createEmployee(employee));
+	public ResponseEntity<?> createEmployee(@RequestBody Employee employee) {
+		employee = employeeService.createEmployee(employee);
+		if (employee == null) {
+			return ResponseEntity.badRequest().body("Employee with given email already exists");
+		}
+		return ResponseEntity.ok(employee);
 	}
 	
 	@PutMapping
-	public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
-		return ResponseEntity.ok(employeeService.updateEmployee(employee));
+	public ResponseEntity<?> updateEmployee(@RequestBody Employee employee) {
+		if (employee.getId() == null) {
+			return ResponseEntity.badRequest().body("Please provide employee id");
+		}
+		Employee updatedEmp = employeeService.updateEmployee(employee);
+		if (updatedEmp == null) {
+			return ResponseEntity.badRequest().body("Employee with given id not found");
+		}
+		return ResponseEntity.ok(updatedEmp);
 	}
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> deleteEmployee(@PathVariable Integer id) {
-		return ResponseEntity.ok(employeeService.deleteEmployee(id));
+		employeeService.deleteEmployee(id);
+		return ResponseEntity.ok("Employee deleted successfully");
 	}
 
 }

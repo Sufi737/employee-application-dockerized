@@ -20,15 +20,28 @@ public class EmployeeService {
 	}
 	
 	public Employee createEmployee(Employee employee) {
-		
-		return employee;
+		Employee existingEmp = employeeRepository.findByEmail(employee.getEmail());
+		if (existingEmp != null) {
+			return null;
+		}
+		role = employeeRepository.save(employee);
+		return role;
 	}
 	
 	public Employee updateEmployee(Employee employee) {
-		return employee;
+		Optional<Employee> existingEmp = employeeRepository.findById(employee.getId());
+		if (existingEmp.isPresent()) {
+			employee = employeeRepository.save(employee);
+			return employee;
+		}
+		return null;
 	}
 	
 	public String deleteEmployee(Integer id) {
-		return "Employee deleted successfully";
+		try {
+			employeeRepository.deleteById(id);
+		} catch (Exception e) {
+			//log exception
+		}
 	}
 }

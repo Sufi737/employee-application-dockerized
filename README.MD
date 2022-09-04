@@ -2,7 +2,7 @@
 This is a proof of concept repository which demonstrates how to Dockerize a Spring Boot application
 
 ## Steps to Dockerize your application
-Refer to this article for the steps: https://medium.com/@khotsufyan/dockerize-your-spring-boot-application-in-7-steps-236ce61b6980
+Refer to this article for the steps: https://khotsufyan.medium.com/dockerize-your-spring-boot-application-in-9-steps-236ce61b6980
 
 ## REST Endpoints
 You may refer to the postman_collection.json file and import it to test the endpoints in Postman

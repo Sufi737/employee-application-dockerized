@@ -33,3 +33,8 @@ You may refer to the postman_collection.json file and import it to test the endp
 | POST | role   | To create a role |
 | PUT | role   | To update a role |
 | DELETE | role/{id}   | To delete a role |
+
+## How to run this application
+1. Clone this repository
+2. Run `mvn package dockerfile:build`
+3. Run `docker-compose up`

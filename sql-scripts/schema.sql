@@ -43,8 +43,9 @@ INSERT INTO department(department_name)
     values ('CMS'), ('Tech'), ('Operations'), ('HR');
 
 
-INSERT INTO employee(firstname, lastname, email, employee_code, password_hash, manager_employee_id, department_id, role_id)
+INSERT INTO employee(firstname, lastname, email, employee_code, manager_employee_id, department_id, role_id)
     values
         ('Sufyan', 'Khot', 'khotsufyan@gmail.com', 'EMP00001', NULL, 2, 2),
-        ('Zeeshan', 'Kazi', 'kazizeeshan@gmail.com', 'EMP00002', 1, 2, 1),
-        ('Aditya', 'Ladhe', 'ladheaditya@gmail.com', 'EMP00003', 1, 2, 1);
+        ('Dhruv', 'Bindoria', 'bindoriadhruv@gmail.com', 'EMP00002', 1, 2, 1),
+        ('Zeeshan', 'Kazi', 'kazizeeshan@gmail.com', 'EMP00003', 1, 2, 1),
+        ('Aditya', 'Ladhe', 'ladheaditya@gmail.com', 'EMP00004', 1, 2, 1);

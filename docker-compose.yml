@@ -3,17 +3,12 @@ version: "3.7"
 services:
   employee-service:
     image: employee/employee:0.0.1-SNAPSHOT
-
     ports:
       - "8080:8080"
-
-    environment:
-      - "SPRING_PROFILES_ACTIVE=dev"
-
     networks:
-      backend:
-        aliases:
-          - "employeeservice"
+      - employee-mysql
+    depends_on: 
+      - db
 
   db:
     image: mysql:8.0
@@ -22,15 +17,16 @@ services:
     restart: always
     environment:
       - MYSQL_DATABASE=employee
-      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root 
     ports:
-      - "3306:3306"
+      - "3306:3306" 
     volumes:
-      - "./sql-scripts:/docker-entrypoint-initdb.d"
-
+      - "./sql-scripts:/docker-entrypoint-initdb.d" 
+    networks:
+      - employee-mysql
+      
 networks:
-  backend:
-    driver: bridge
+  employee-mysql:
     
 volumes:
   db:

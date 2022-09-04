@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.system.employee.entities.Department;
 import com.system.employee.entities.Employee;
-import com.system.employee.entities.EmployeeRequestEntity;
 import com.system.employee.entities.EmployeeResponseEntity;
 import com.system.employee.entities.Role;
 import com.system.employee.services.DepartmentService;

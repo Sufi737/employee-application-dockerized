@@ -24,8 +24,8 @@ public class EmployeeService {
 		if (existingEmp != null) {
 			return null;
 		}
-		role = employeeRepository.save(employee);
-		return role;
+		employee = employeeRepository.save(employee);
+		return employee;
 	}
 	
 	public Employee updateEmployee(Employee employee) {
@@ -37,7 +37,7 @@ public class EmployeeService {
 		return null;
 	}
 	
-	public String deleteEmployee(Integer id) {
+	public void deleteEmployee(Integer id) {
 		try {
 			employeeRepository.deleteById(id);
 		} catch (Exception e) {
